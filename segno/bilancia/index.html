@@ -1,0 +1,128 @@
+<html lang="it">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Bilanciamo.questo.mondo</title>
+        <link rel="stylesheet" href="segnostile.css" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap">
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+
+      <body>
+        <header>
+          <nav class="barra-menu">
+              <img src="Logo.png" alt="" width="120px">
+              <div class="menu">
+                  <ul>
+                      <li><a href="../../index.html" class="home">HOME</a></li>
+                      <li><a href="../index.html" class="segnonav">SEGNO</a></li>
+                      <li class="menuoroscopo" id="oroscopo-menu">
+                          <a href="#" class="linkoroscopo">OROSCOPO</a>
+                          <div class="contenutimenuoroscopo">
+                              <a href="../../oroscopo/intromese/index.html" class="mese">Del mese</a>
+                              <a href="../../oroscopo/introanno/index.html" class="anno">Dell'anno</a>
+                          </div>
+                      </li>
+                      <li><a href="../../aboutus/index.html" class="chisiamo">CHI SIAMO</a></li>
+                  </ul>
+              </div>
+          </nav>
+      </header>
+
+
+        <div class="top">
+            <div class="immagine">
+                <img class="pf" src="bilancia.png" width="300px" height="300px">
+            </div>
+            <div class="testi">
+                <div>
+                    <h1 class="nomesegno">Bilanciamo.questo.mondo</h1>
+                </div>
+                <div class="t2">
+                <div class="t1">
+                    <p><b>334</b><br>Giustizia</p>
+                </div>
+                <div class="t1">
+                    <p><b>954</b><br>Giudizio</p>
+                </div>
+                </div>
+                <div class="t1">
+                    <p><b>AMICI STRETTI</b><br>
+                    Aquario-Cancro</p>
+                </div>
+            </div>
+        </div>
+<br>
+<div class="bio">
+  <p>Devi sempre trovare il pretesto per discutere con gli altri.
+    </p>
+</div>
+
+<br>
+
+<br>
+<br>
+
+<div class="container-card-oroscopo">
+    <div class="card-oroscopo card-mese">
+      <a href="../../oroscopo/intromese/mesebilancia/index.html">
+        <h3>Il tuo Mese</h3>
+        <p>Scopri cosa ti riservano le stelle questo mese.</p>
+        <button class="bottone-card">
+          <i class="fas fa-arrow-right icona-bottone"></i>
+        </button>
+      </a>
+    </div>
+  
+    <div class="card-oroscopo card-anno">
+      <a href="../../oroscopo/introanno/annobilancia/index.html">
+        <h3>Il tuo Anno</h3>
+        <p>Un'anteprima completa del tuo anno.</p>
+        <button class="bottone-card">
+          <i class="fas fa-arrow-right icona-bottone"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+
+
+    <br>
+    <br>
+
+
+    <div>
+      <img src="starry.jpg" alt="" width="100%">
+      </div>
+      <footer>
+          <div class="footer-container">
+              <div class="footer-left">
+                  <img class="footer-logo" src="Logo_footer.png" alt="Logo">
+                  <a class="footer-email" href="mailto:arcangelamelone2000@gmail.com">arcangelamelone2000@gmail.com</a>
+                  </div>
+              <div class="footer-right">
+                  &copy; 2025 Disastro. Tutti i diritti riservati.
+              </div>
+          </div>
+      </footer>
+    
+          </body>
+        </html>
+    
+    
+        <script>
+          const oroscopoMenu = document.getElementById('oroscopo-menu');
+          const sottomenu = oroscopoMenu.querySelector('.contenutimenuoroscopo');
+      
+          oroscopoMenu.addEventListener('click', function(event) {
+              event.preventDefault(); // Impedisce il comportamento predefinito del link (se presente)
+              sottomenu.style.display = sottomenu.style.display === 'block' ? 'none' : 'block';
+          });
+      
+          sottomenu.addEventListener('click', function(event) {
+          if (event.target.classList.contains('mese') || event.target.classList.contains('anno')) {
+              event.stopPropagation(); // ESSENZIALE: Impedisce la propagazione al contenitore
+              // Ora il link funzionerà automaticamente perché non c'è più preventDefault qui per i link del sottomenu.
+          }
+      });
+      </script>

@@ -1,1 +1,176 @@
-qui ci sara il mio portfolio
+<html lang="it">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Disastro - Homepage</title>
+        <link rel="stylesheet" href="stylehome.css" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap">
+            <meta charset="utf-8">
+  </head>
+
+
+  <body>
+    <header>
+        <div class="video-container">
+            <video autoplay muted loop playsinline poster="immagine-di-fallback.jpg">
+                <source src="video.mp4" type="video/mp4">
+                <source src="video.webm" type="video/webm">
+            </video>
+        </div>
+        <nav class="barra-menu">
+            <img src="Logo.png" alt="" width="120px">
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html" class="home">HOME</a></li>
+                    <li><a href="segno/index.html" class="segnonav">SEGNO</a></li>
+                    <li class="menuoroscopo" id="oroscopo-menu">
+                        <a href="#" class="linkoroscopo">OROSCOPO</a>
+                        <div class="contenutimenuoroscopo">
+                            <a href="oroscopo/intromese/index.html" class="mese">Del mese</a>
+                            <a href="oroscopo/introanno/index.html" class="anno">Dell'anno</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus/index.html" class="chisiamo">CHI SIAMO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+<div class="intro">
+    <p class="claim">Il tuo oroscopo sbagliato.</p>
+    <p class="descrizione">
+        <i>*Ogni riferimento a persone o fatti realmente accaduti è puramente casuale</i>
+        </p>
+        <br>
+        <div class="button-container">
+        <button class="fill-button">Scopri che segno sei</button>
+        </div>
+</div>
+
+
+<p class="scegli">Il tuo segno Zodiacale</p>
+<br>
+<div class="tutti-i-segni">
+<div class="slider-wrapper">
+<div class="slider-container">
+    <button class="slider-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+          </svg>
+    </button>
+    <div class="slider">
+        </div>
+    <button class="slider-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+          </svg>
+    </button>
+   
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<div>
+<img src="starry.jpg" alt="" width="100%">
+</div>
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <img class="footer-logo" src="Logo_footer.png" alt="Logo">
+            <a class="footer-email" href="mailto:arcangelamelone2000@gmail.com">arcangelamelone2000@gmail.com</a>
+        </div>
+        <div class="footer-right">
+            &copy; 2025 Disastro. Tutti i diritti riservati.
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+   const sliderContainer = document.querySelector('.slider-container');
+    const slider = document.querySelector('.slider');
+    const prevButton = document.querySelector('.slider-prev');
+    const nextButton = document.querySelector('.slider-next');
+    const items = [
+        {href: "segno/ariete/index.html", img: "ariete.png", text: "ARIETE"},
+        {href: "segno/toro/index.html", img: "toro.png", text: "TORO"},
+        {href: "segno/gemelli/index.html", img: "gemelli.png", text: "GEMELLI"},
+        {href: "segno/cancro/index.html", img: "cancro.png", text: "CANCRO"},
+        {href: "segno/leone/index.html", img: "leone.png", text: "LEONE"},
+        {href: "segno/vergine/index.html", img: "vergine.png", text: "VERGINE"},
+        {href: "segno/bilancia/index.html", img: "bilancia.png", text: "BILANCIA"},
+        {href: "segno/scorpione/index.html", img: "scorpione.png", text: "SCORPIONE"},
+        {href: "segno/sagittario/index.html", img: "sagittario.png", text: "SAGITTARIO"},
+        {href: "segno/capricorno/index.html", img: "capricorno.png", text: "CAPRICORNO"},
+        {href: "segno/aquario/index.html", img: "aquario.png", text: "AQUARIO"},
+        {href: "segno/pesci/index.html", img: "pesci.png", text: "PESCI"},
+    ];
+    items.forEach(item=>{
+        slider.innerHTML += `<a href="${item.href}" class="slider-item">
+            <div class="segno">
+                <img src="${item.img}" width="200px">
+                <div class="overlay">
+                    <div class="text">${item.text}</div>
+                </div>
+                <p class="segnonascosto">${item.text}</p>
+            </div>
+        </a>`;
+    })
+    let currentPosition = 0;
+    let scrollAmount = 200;
+
+    function updateSlider() {
+        slider.style.transform = `translateX(-${currentPosition}px)`;
+        prevButton.style.display = currentPosition <= 0 ? 'none' : 'block';
+        nextButton.style.display = currentPosition >= slider.scrollWidth - sliderContainer.offsetWidth ? 'none' : 'block';
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentPosition += scrollAmount;
+        updateSlider();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentPosition -= scrollAmount;
+        updateSlider();
+    });
+    window.addEventListener('resize', updateSlider);
+    updateSlider();
+
+
+
+    const oroscopoMenu = document.getElementById('oroscopo-menu');
+    const sottomenu = oroscopoMenu.querySelector('.contenutimenuoroscopo');
+
+    oroscopoMenu.addEventListener('click', function(event) {
+        event.preventDefault(); // Impedisce il comportamento predefinito del link (se presente)
+        sottomenu.style.display = sottomenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    sottomenu.addEventListener('click', function(event) {
+    if (event.target.classList.contains('mese') || event.target.classList.contains('anno')) {
+        event.stopPropagation(); // ESSENZIALE: Impedisce la propagazione al contenitore
+        // Ora il link funzionerà automaticamente perché non c'è più preventDefault qui per i link del sottomenu.
+    }
+});
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+  </html>

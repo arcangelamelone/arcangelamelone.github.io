@@ -1,0 +1,858 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  width: auto;
+  height: auto;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url("sfondo.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: black;
+  color: #ffffff;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.barra-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(24, 24, 24, 0.5); /* viola con trasparenza */
+  padding: 16pt 80pt;
+  position: fixed; /* Importante: il menu sta SOPRA il video */
+  width: 100%;
+  z-index: 10; /* Assicura che il menu sia visibile */
+  color: white; /* Colore del testo del menu */
+  border-bottom:1px solid #cc99cc;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Per allineare gli elementi della lista orizzontalmente */
+}
+
+.menu li {
+  margin-left: 16px; /* Spazio tra le voci del menu */
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px; /* Aggiunto padding per rendere i link cliccabili più facilmente */
+  transition: background-color 0.3s ease; /* Aggiunta transizione per hover */
+}
+
+.home:hover {
+color: #ff6633;
+}
+
+.segnonav:hover {
+  color:#ffcc66;
+}
+
+.linkoroscopo:hover {
+  color: #cc99cc;
+}
+
+.chisiamo:hover {
+  color:#6633ff;
+}
+
+/* Stili per il sottomenu */
+.menuoroscopo {
+  position: relative;
+  display: inline-block; /* Importante per il posizionamento del sottomenu */
+}
+
+.contenutimenuoroscopo {
+  display: none;
+  position: absolute;
+  background-color: rgba(204, 153, 204, 0.9); /* Rosa chiaro con trasparenza */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px; /* Larghezza minima del sottomenu */
+  margin-top: 34px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.contenutimenuoroscopo a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius: none;
+}
+
+.contenutimenuoroscopo a:hover {
+  background-color: #f1f1f1;
+  color: #cc99cc;
+  font-weight: bold;
+  border-radius: none;
+}
+
+.mese:hover {
+  border-radius: none;
+}
+
+.anno:hover {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.titolo h1{
+  color: white;
+  text-align: center;
+  margin-top: 160px;
+  font-size: 36pt;
+}
+
+p {
+  color: white;
+  text-align: center;
+  padding: 10px 0px 0px;
+  font-weight: bold;
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 80px 200px;
+}
+
+.ariete {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segnouno {
+  display: block;
+}
+
+.overlayuno {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.ariete:hover .overlayuno {
+  opacity: 0.8;
+}
+
+.textuno {
+  color: #ff6633;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.toro {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno2 {
+  display: block;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.toro:hover .overlay2 {
+  opacity: 0.8;
+}
+
+.text2 {
+  color: #ffcc66;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.gemelli {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno3 {
+  display: block;
+}
+
+.overlay3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.gemelli:hover .overlay3 {
+  opacity: 0.8;
+}
+
+.text3 {
+  color: #cc99cc;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.cancro {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno4 {
+  display: block;
+}
+
+.overlay4 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.cancro:hover .overlay4 {
+  opacity: 0.8;
+}
+
+.text4 {
+  color: #6633ff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.leone {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno5 {
+  display: block;
+}
+
+.overlay5 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.leone:hover .overlay5 {
+  opacity: 0.8;
+}
+
+.text5 {
+  color: #ff6633;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.vergine {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno6 {
+  display: block;
+}
+
+.overlay6 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.vergine:hover .overlay6 {
+  opacity: 0.8;
+}
+
+.text6 {
+  color: #ffcc66;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.bilancia {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno7 {
+  display: block;
+}
+
+.overlay7 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.bilancia:hover .overlay7 {
+  opacity: 0.8;
+}
+
+.text7 {
+  color: #cc99cc;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.scorpione {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno8 {
+  display: block;
+}
+
+.overlay8 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.scorpione:hover .overlay8 {
+  opacity: 0.8;
+}
+
+.text8 {
+  color: #6633ff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.sagittario {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno9 {
+  display: block;
+}
+
+.overlay9 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.sagittario:hover .overlay9 {
+  opacity: 0.8;
+}
+
+.text9 {
+  color: #ff6633;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.capricorno {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno10 {
+  display: block;
+}
+
+.overlay10 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.capricorno:hover .overlay10 {
+  opacity: 0.8;
+}
+
+.text10 {
+  color: #ffcc66;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.aquario {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno11 {
+  display: block;
+}
+
+.overlay11 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.aquario:hover .overlay11 {
+  opacity: 0.8;
+}
+
+.text11 {
+  color: #cc99cc;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.pesci {
+  padding: 20px 20px;
+  position: relative;
+}
+
+.segno12 {
+  display: block;
+}
+
+.overlay12 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  width: 200px;
+  margin: 20px 20px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.pesci:hover .overlay12 {
+  opacity: 0.8;
+}
+
+.text12 {
+  color: #6633ff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 40px 0;
+}
+
+.footer-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuisce lo spazio tra le due sezioni principali */
+  align-items: flex-start; /* Allinea gli elementi all'inizio del contenitore */
+}
+
+.footer-left {
+  display: flex; /* Per disporre logo e email orizzontalmente */
+  flex-direction: column; /* Li dispone in colonna */
+  align-items: flex-start;
+}
+
+.footer-logo {
+  max-width: 100px;
+  margin-bottom: 10px; /* Spazio tra logo e email */
+}
+
+.footer-email {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.footer-email:hover {
+  color: #cc99cc;
+}
+.footer-right {
+  text-align: right; /* Allinea il testo a destra */
+  align-self: flex-end; /* Allinea la sezione in basso a destra */
+}
+
+
+@media only screen and (max-width: 430px) {
+
+  body {
+      background-image: url('sfondobiancoverticale.png');
+}
+
+.titolo h1 {
+  font-size: 25pt;
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+p {
+  display: block;
+}
+
+  .container {
+    justify-content: center;
+    padding: 0px 0px;
+  }
+
+   .segnouno  {
+    width: 120px;
+    height: 120px;
+  }
+
+  .segno2  {
+   width: 120px;
+   height: 120px;
+ }
+
+ .segno3  {
+  width: 120px;
+  height: 120px;
+}
+
+.segno4  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno5  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno6  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno7  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno8  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno9  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno10  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno11  {
+ width: 120px;
+ height: 120px;
+}
+
+.segno12  {
+ width: 120px;
+ height: 120px;
+}
+
+.overlayuno {
+  display: none;
+}.overlay2 {
+  display: none;
+}.overlay3 {
+  display: none;
+}.overlay4 {
+  display: none;
+}.overlay5 {
+  display: none;
+}.overlay6 {
+  display: none;
+}.overlay7 {
+  display: none;
+}.overlay8 {
+  display: none;
+}.overlay9 {
+  display: none;
+}.overlay10 {
+  display: none;
+}.overlay11 {
+  display: none;
+}.overlay12 {
+  display: none;
+}
+
+
+
+div .menu {
+  display: none;
+}
+
+.iconamenu {
+  display: block;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.bottonemenu {
+  background: none;
+  border: none;
+  margin-top: 4px;
+}
+
+.barra-menu{
+  justify-content: flex-start;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+div .menu {
+position: absolute;
+margin: 50px 5px;
+padding: 15px 15px;
+background-color: #6633ff;
+border-radius: 10px;
+}
+
+.menu ul li {
+  display: list-item;
+  padding: 5px 10px;
+}
+
+.menu ul li a {
+ font-size: 12pt;
+}
+
+.contenutimenuoroscopo {
+  top: 85px;
+  margin-left: 125px;
+  border-radius: 10px;
+
+}
+
+.contenutimenuoroscopo li {
+border-radius: 10px;
+}
+
+.contenutimenuoroscopo .mese {
+  font-size: 12pt;
+  padding: 8px 10px 8px 10px;
+}
+
+.contenutimenuoroscopo .anno {
+  font-size: 12pt;
+  padding: 8px 10px 8px 10px;
+}
+
+.logofooter{
+    padding: 30px 0px 0px 10px;
+}
+
+.email {
+  margin-left: 10px;
+  font-size: 8pt;
+}
+
+.diritti {
+      padding: 140px 10px 10px 5px;
+      font-size: 7pt;
+}
+
+
+.email {
+  margin-left: 10px;
+}
+
+  .email p {
+    font-size: 8pt;
+    text-align: left;
+    font-weight: normal;
+  }
+
+  .diritti p {
+        padding: 30px 10px 10px 5px;
+        font-size: 7pt;
+        text-align: left;
+            font-weight: normal;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}

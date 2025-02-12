@@ -1,0 +1,186 @@
+<html lang="it">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Il mese di toro</title>
+    <link rel="stylesheet" href="oroscopomesetorostyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="barra-menu">
+          <img src="Logo.png" alt="" width="120px">
+          <div class="menu">
+              <ul>
+                  <li><a href="../../../index.html" class="home">HOME</a></li>
+                  <li><a href="../../../segno/index.html" class="segnonav">SEGNO</a></li>
+                  <li class="menuoroscopo" id="oroscopo-menu">
+                      <a href="#" class="linkoroscopo">OROSCOPO</a>
+                      <div class="contenutimenuoroscopo">
+                          <a href="../../intromese/index.html" class="mese">Del mese</a>
+                          <a href="../../introanno/index.html" class="anno">Dell'anno</a>
+                      </div>
+                  </li>
+                  <li><a href="../../../aboutus/index.html" class="chisiamo">CHI SIAMO</a></li>
+              </ul>
+          </div>
+      </nav>
+  </header>
+
+        <div class="titolosegno">
+          <div class="icona">
+            <img src="toro.png" alt="" width="100px" height="100px">
+          </div>
+          <div class="dati">
+            <h2>TORO</h2>
+            <h1>Il tuo oroscopo del mese</h1>
+          </div>
+          </div>
+
+          <div class="partedue">
+
+            <div class="app">
+              <div class="cardList">
+                <button class="cardList__btn btn btn--left">
+                  <div class="icon">
+                    <svg>
+                      <use xlink:href="#arrow-left"></use>
+                    </svg>
+                  </div>
+                </button>
+
+                <div class="cards__wrapper">
+                  <div class="card current--card">
+                    <div class="card__image">
+                      <img src="amore-toro.png" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="card next--card">
+                    <div class="card__image">
+                      <img src="lavoro-toro.png" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="card previous--card">
+                    <div class="card__image">
+                      <img src="salute-toro.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <button class="cardList__btn btn btn--right">
+                  <div class="icon">
+                    <svg>
+                      <use xlink:href="#arrow-right"></use>
+                    </svg>
+                  </div>
+                </button>
+                </div>
+
+                <div class="infoList">
+                  <div class="info__wrapper">
+                    <div class="info current--info">
+                      <h1 class="text name">AMORE</h1>
+                      <p class="text description"><img src="stelle1.png" width="80px"></p>
+                    </div>
+
+                    <div class="info next--info">
+                      <h1 class="text name">LAVORO</h1>
+                      <p class="text description"><img src="stelle2.png" width="80px"></p>
+                    </div>
+
+                    <div class="info previous--info">
+                      <h1 class="text name">SALUTE</h1>
+                      <p class="text description"><img src="stelle3.png" width="80px"></p>
+                    </div>
+                    </div>
+                    </div>
+
+                    <div class="app__bg">
+                      <div class="app__bg__image current--image">
+                        <img src="sfondogiallo.png" alt="" />
+                      </div>
+                      <div class="app__bg__image next--image">
+                        <img src="sfondogiallo.png" alt="" />
+                      </div>
+                      <div class="app__bg__image previous--image">
+                        <img src="sfondogiallo.png" alt="" />
+                      </div>
+                    </div>
+                    </div>
+
+                    <svg class="icons" style="display: none;">
+                      <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                        <polyline points='328 112 184 256 328 400'
+                               style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+                      </symbol>
+                      <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                        <polyline points='184 112 328 256 184 400'
+                               style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+                      </symbol>
+                    </svg>
+
+                    <script type="text/javascript" src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+                    <script type="text/javascript" src="oroscopomesetoroscript.js"></script>
+
+          </div>
+
+          <div class="container-card-oroscopo">
+            
+            <div class="card-oroscopo card-anno">
+              <a href="../../introanno/annotoro/index.html">
+                <h3>Il tuo Anno</h3>
+                <p>Un'anteprima completa del tuo anno.</p>
+                <button class="bottone-card">
+                  <i class="fas fa-arrow-right icona-bottone"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        
+        
+            <br>
+            <br>
+        
+        
+            <div>
+              <img src="starry.jpg" alt="" width="100%">
+              </div>
+              <footer>
+                  <div class="footer-container">
+                      <div class="footer-left">
+                          <img class="footer-logo" src="Logo_footer.png" alt="Logo">
+                          <a class="footer-email" href="mailto:arcangelamelone2000@gmail.com">arcangelamelone2000@gmail.com</a>
+                          </div>
+                      <div class="footer-right">
+                          &copy; 2025 Disastro. Tutti i diritti riservati.
+                      </div>
+                  </div>
+              </footer>
+            
+                  </body>
+                </html>
+
+
+                <script>
+                  const oroscopoMenu = document.getElementById('oroscopo-menu');
+                  const sottomenu = oroscopoMenu.querySelector('.contenutimenuoroscopo');
+              
+                  oroscopoMenu.addEventListener('click', function(event) {
+                      event.preventDefault(); // Impedisce il comportamento predefinito del link (se presente)
+                      sottomenu.style.display = sottomenu.style.display === 'block' ? 'none' : 'block';
+                  });
+              
+                  sottomenu.addEventListener('click', function(event) {
+                  if (event.target.classList.contains('mese') || event.target.classList.contains('anno')) {
+                      event.stopPropagation(); // ESSENZIALE: Impedisce la propagazione al contenitore
+                      // Ora il link funzionerà automaticamente perché non c'è più preventDefault qui per i link del sottomenu.
+                  }
+              });
+              </script>

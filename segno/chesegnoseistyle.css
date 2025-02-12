@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #cc99cc;
+  text-align: center;
+  font-size: 48pt;
+  margin-top: 120px;
+}
+
+body {
+  width: auto;
+  height: auto;
+  font-family: "Red Hat Display", sans-serif;
+  background-image: url("sfondorosso.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-color: black;
+  color: #ffffff;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* NAV */
+
+
+.barra-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(24, 24, 24, 0.5); /* viola con trasparenza */
+  padding: 16pt 80pt;
+  position: fixed; /* Importante: il menu sta SOPRA il video */
+  width: 100%;
+  z-index: 10; /* Assicura che il menu sia visibile */
+  color: white; /* Colore del testo del menu */
+  border-bottom:1px solid #cc99cc;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Per allineare gli elementi della lista orizzontalmente */
+}
+
+.menu li {
+  margin-left: 16px; /* Spazio tra le voci del menu */
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px; /* Aggiunto padding per rendere i link cliccabili più facilmente */
+  transition: background-color 0.3s ease; /* Aggiunta transizione per hover */
+}
+
+.home:hover {
+color: #ff6633;
+}
+
+.segnonav:hover {
+  color:#ffcc66;
+}
+
+.linkoroscopo:hover {
+  color: #cc99cc;
+}
+
+.chisiamo:hover {
+  color:#6633ff;
+}
+
+/* Stili per il sottomenu */
+.menuoroscopo {
+  position: relative;
+  display: inline-block; /* Importante per il posizionamento del sottomenu */
+}
+
+.contenutimenuoroscopo {
+  display: none;
+  position: absolute;
+  background-color: rgba(204, 153, 204, 0.9); /* Rosa chiaro con trasparenza */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px; /* Larghezza minima del sottomenu */
+  margin-top: 34px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.contenutimenuoroscopo a {
+  color: #ffffff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius: none;
+}
+
+.contenutimenuoroscopo a:hover {
+  background-color: #f1f1f1;
+  color: #cc99cc;
+  font-weight: bold;
+  border-radius: none;
+}
+
+.mese:hover {
+  border-radius: none;
+}
+
+.anno:hover {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* JAVA */
+
+#space {
+  display: none; /* Nascondi l'elemento all'inizio */
+  text-align: center;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 16pt;
+  color: #ffffff;
+}
+
+
+.ricerca {
+  text-align: center;
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 20pt;
+  font-weight:400;
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 17pt;
+}
+
+p [id="photo"] {
+  align-items: center;
+  width:20%;
+}
+
+ #animated{
+  animation-name: move;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.boxmese, .boxgiorno {
+  display: inline-block;
+  vertical-align: middle; /* Allinea verticalmente al centro (opzionale) */
+  margin-right: 10px; /* Spazio tra gli elementi (opzionale) */
+}
+
+
+input {
+  padding: 10px 24px;
+  border-radius: 8px;
+  background-color: black;
+  border: 2px solid #cc99cc ;
+  color: #ffffff;
+}
+
+#space{
+ font-size:24px;
+ color: #ffcc66;
+}
+
+a.button {
+ background: #6633ff;
+ margin-bottom:100px;
+ color: white;
+ font-size: 16px;
+ text-decoration: none;
+ cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transizioni per un effetto più fluido */
+}
+
+a.button:hover {
+  background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+  transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombra al passaggio del mouse */
+  border: 2px solid #6633ff ;
+}
+
+a.button:active { /* Stile quando il pulsante viene cliccato */
+    transform: scale(0.95); /* Leggera riduzione quando cliccato */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/* PULSANTE SCOPRI */
+
+.empty {
+display: block;
+width: 50%;
+padding: 10px;
+text-align: center;
+margin-bottom: 300px;
+}
+
+.scopri {
+text-decoration: none;
+color: white;
+background-color: #6633ff;
+border-radius: 8px;
+font-size: 14pt;
+font-weight: bold;
+padding: 10px 20px;
+margin-bottom: 300px;
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scopri:hover {
+  background-color: #000000; /* Colore di sfondo al passaggio del mouse */
+  transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombra al passaggio del mouse */
+  border: 2px solid #6633ff ;
+  transform: translateX(-50%);
+  margin-bottom: 300px;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 40px 0;
+}
+
+.footer-container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribuisce lo spazio tra le due sezioni principali */
+  align-items: flex-start; /* Allinea gli elementi all'inizio del contenitore */
+}
+
+.footer-left {
+  display: flex; /* Per disporre logo e email orizzontalmente */
+  flex-direction: column; /* Li dispone in colonna */
+  align-items: flex-start;
+}
+
+.footer-logo {
+  max-width: 100px;
+  margin-bottom: 10px; /* Spazio tra logo e email */
+}
+
+.footer-email {
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.footer-email:hover {
+  color: #cc99cc;
+}
+.footer-right {
+  text-align: right; /* Allinea il testo a destra */
+  align-self: flex-end; /* Allinea la sezione in basso a destra */
+}
+

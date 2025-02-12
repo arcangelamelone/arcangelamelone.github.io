@@ -1,0 +1,180 @@
+<html lang="it">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Che segno sei</title>
+    <link rel="stylesheet" href="chesegnoseistyle.css" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap">
+    <meta charset="utf-8">
+</head>
+<body>
+    <header>
+        <nav class="barra-menu">
+            <img src="Logo.png" alt="" width="120px">
+            <div class="menu">
+                <ul>
+                    <li><a href="../index.html" class="home">HOME</a></li>
+                    <li><a href="index.html" class="segnonav">SEGNO</a></li>
+                    <li class="menuoroscopo" id="oroscopo-menu">
+                        <a href="#" class="linkoroscopo">OROSCOPO</a>
+                        <div class="contenutimenuoroscopo">
+                            <a href="../oroscopo/intromese/index.html" class="mese">Del mese</a>
+                            <a href="../oroscopo/introanno/index.html" class="anno">Dell'anno</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus/index.html" class="chisiamo">CHI SIAMO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+  <br>
+
+  <div class="corpo">
+  <h1> TU CHE SEGNO SEI?</h1>
+  <br>
+  <div class="ricerca">
+    <h2> Inserisci la tua data di nascita </h2>
+   <br>
+
+<div class="inserisci">
+    <div class="boxmese">Mese <br> <input type="number" id="mese" min="1" max="12" ></div>
+    <div class="boxgiorno"> Giorno <br> <input type="number" id="giorno" min="1" max="31" ></div>
+   </div>
+<br>
+<br>
+<a id="animated" onclick="zodiac()"  class="button"><b>Calcola!</b> </a>
+    <br>
+    <br>
+    <br>
+    <div id="space"><h3>Il tuo segno zodiacale è: <br> <span id="output"></span></h3> </div>
+    <p id="characteristic"></p>
+<p id="photo"></p>
+</div>
+</div>
+<br>
+<div id="empty"></div>
+
+<br><br>
+
+<div>
+    <img src="starry.jpg" alt="" width="100%">
+    </div>
+<footer>
+  <div class="footer-container">
+      <div class="footer-left">
+          <img class="footer-logo" src="Logo_footer.png" alt="Logo">
+          <a class="footer-email" href="mailto:arcangelamelone2000@gmail.com">arcangelamelone2000@gmail.com</a>
+      </div>
+      <div class="footer-right">
+          &copy; 2025 Disastro. Tutti i diritti riservati.
+      </div>
+  </div>
+</footer>
+
+
+
+<script>
+  function zodiac() {
+      var mese = parseInt(document.getElementById("mese").value);
+      var giorno = parseInt(document.getElementById("giorno").value);
+      var result = "Se non inserisci la data non sapremo mai qual'è il tuo segno. &#128335";
+
+      // Verifica che mese e giorno siano numeri validi
+      if (isNaN(mese) || isNaN(giorno) || mese < 1 || mese > 12 || giorno < 1 || giorno > 31) {
+          alert("Per favore inserisci una data valida.");
+          return; // Esce dalla funzione se la data non è valida
+      }
+
+
+      if ((mese == 1 && giorno >= 20) || (mese == 2 && giorno <= 18)) {
+          result = "Aquario";
+          setImage("aquario.png", "#cc99cc");
+          createLink("aquario/index.html");
+      } else if ((mese == 2 && giorno >= 19) || (mese == 3 && giorno <= 20)) {
+          result = "Pesci";
+          setImage("pesci.png", "#6633ff");
+          createLink("pesci/index.html");
+      } else if ((mese == 3 && giorno >= 21) || (mese == 4 && giorno <= 19)) {
+          result = "Ariete";
+          setImage("ariete.png", "#ff6633");
+          createLink("ariete/index.html");
+      } else if ((mese == 4 && giorno >= 20) || (mese == 5 && giorno <= 20)) {
+          result = "Toro";
+          setImage("toro.png", "#ffcc66");
+          createLink("toro/index.html");
+      } else if ((mese == 5 && giorno >= 21) || (mese == 6 && giorno <= 20)) {
+          result = "Gemelli";
+          setImage("gemelli.png", "#cc99cc");
+          createLink("gemelli/index.html");
+      } else if ((mese == 6 && giorno >= 21) || (mese == 7 && giorno <= 22)) {
+          result = "Cancro";
+          setImage("cancro.png", "#6633ff");
+          createLink("cancro/index.html");
+      } else if ((mese == 7 && giorno >= 23) || (mese == 8 && giorno <= 22)) {
+          result = "Leone";
+          setImage("leone.png", "#ff6633");
+          createLink("leone/index.html");
+      } else if ((mese == 8 && giorno >= 23) || (mese == 9 && giorno <= 22)) {
+          result = "Vergine";
+          setImage("vergine.png", "#ffcc66");
+          createLink("vergine/index.html");
+      } else if ((mese == 9 && giorno >= 23) || (mese == 10 && giorno <= 22)) {
+          result = "Bilancia";
+          setImage("bilancia.png", "#cc99cc");
+          createLink("bilancia/index.html");
+      } else if ((mese == 10 && giorno >= 23) || (mese == 11 && giorno <= 21)) {
+          result = "Scorpione";
+          setImage("scorpione.png", "#6633ff");
+          createLink("scorpione/index.html");
+      } else if ((mese == 11 && giorno >= 22) || (mese == 12 && giorno <= 21)) {
+          result = "Sagittario";
+          setImage("sagittario.png", "#ff6633");
+          createLink("sagittario/index.html");
+      } else if ((mese == 12 && giorno >= 22) || (mese == 1 && giorno <= 19)) {
+          result = "Capricorno";
+          setImage("capricorno.png", "#ffcc66");
+          createLink("capricorno/index.html");
+      }
+
+      document.getElementById("output").innerHTML = result;
+            document.getElementById("space").style.display = "block"; // Mostra #space
+        
+  }
+
+  function setImage(imagePath, color) {
+      document.getElementById("photo").innerHTML = "<img src='" + imagePath + "' width='16%'>";
+      document.getElementById("output").style.color = color;
+      document.getElementById("output").style.fontSize = "24pt";
+      document.getElementById("output").style.fontWeight = "bold";
+  }
+
+  function createLink(linkPath) {
+      var a = document.createElement('a');
+      a.className = 'scopri';
+      var link = document.createTextNode("Scopri");
+      a.appendChild(link);
+      a.href = linkPath;
+      a.style.textDecoration = "none";
+      document.getElementById("empty").innerHTML = ""; // Pulisce il link precedente
+      document.getElementById("empty").appendChild(a);
+  }
+
+  const oroscopoMenu = document.getElementById('oroscopo-menu');
+    const sottomenu = oroscopoMenu.querySelector('.contenutimenuoroscopo');
+
+    oroscopoMenu.addEventListener('click', function(event) {
+        event.preventDefault(); // Impedisce il comportamento predefinito del link (se presente)
+        sottomenu.style.display = sottomenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    sottomenu.addEventListener('click', function(event) {
+    if (event.target.classList.contains('mese') || event.target.classList.contains('anno')) {
+        event.stopPropagation(); // ESSENZIALE: Impedisce la propagazione al contenitore
+        // Ora il link funzionerà automaticamente perché non c'è più preventDefault qui per i link del sottomenu.
+    }
+});
+
+</script>
+
+
+</body>
+</html>

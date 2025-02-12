@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: auto;
+    height: auto;
+    font-family: "Red Hat Display", sans-serif;
+    background-image: url("sfondo.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-color: black;
+    color: #ffffff;
+  }
+
+  header {
+    position: relative;
+    overflow: hidden;
+    height: 80%; /* o un'altezza fissa, es. 500px */
+    width: 100%;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Il video sta dietro */
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* oppure object-fit: cover per riempire l'area */
+}
+
+.video-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; 
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    z-index: 3;
+    pointer-events: none;
+}
+
+.barra-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(24, 24, 24, 0.5); /* viola con trasparenza */
+    padding: 16pt 80pt;
+    position: fixed; /* Importante: il menu sta SOPRA il video */
+    width: 100%;
+    z-index: 10; /* Assicura che il menu sia visibile */
+    color: white; /* Colore del testo del menu */
+    border-bottom:1px solid #cc99cc;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Per allineare gli elementi della lista orizzontalmente */
+}
+
+.menu li {
+    margin-left: 16px; /* Spazio tra le voci del menu */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px; /* Aggiunto padding per rendere i link cliccabili più facilmente */
+    transition: background-color 0.3s ease; /* Aggiunta transizione per hover */
+}
+
+.home:hover {
+  color: #ff6633;
+}
+
+.segnonav:hover {
+    color:#ffcc66;
+  }
+
+.linkoroscopo:hover {
+    color: #cc99cc;
+}
+
+.chisiamo:hover {
+    color:#6633ff;
+}
+
+/* Stili per il sottomenu */
+.menuoroscopo {
+    position: relative;
+    display: inline-block; /* Importante per il posizionamento del sottomenu */
+}
+
+.contenutimenuoroscopo {
+    display: none;
+    position: absolute;
+    background-color: rgba(204, 153, 204, 0.9); /* Rosa chiaro con trasparenza */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 160px; /* Larghezza minima del sottomenu */
+    margin-top: 34px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.contenutimenuoroscopo a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: none;
+}
+
+.contenutimenuoroscopo a:hover {
+    background-color: #f1f1f1;
+    color: #cc99cc;
+    font-weight: bold;
+    border-radius: none;
+}
+
+.mese:hover {
+    border-radius: none;
+}
+
+.anno:hover {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.intro {
+    margin-top: -100px;
+    justify-content: center;
+}
+
+.claim {
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+}
+
+  .descrizione {
+    margin-top: 12px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #FFFFFF;
+    display: block;
+    font-size: 12pt;
+    text-align: center;
+}
+
+
+.fill-button {
+    border-radius: 40px;
+    margin-top: 16px;
+    background-color: #cc99cc; /* Colore di riempimento di default (blu) */
+    border: 2px solid #cc99cc; /* Bordo dello stesso colore del riempimento */
+    color: white; /* Colore del testo */
+    padding: 10px 20px; /* Spazio interno al pulsante */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transizione per un effetto fluido */
+}
+
+.button-container {
+    text-align: center; /* Centra orizzontalmente il contenuto */
+  }
+
+.fill-button:hover {
+    background-color: transparent; /* Rende lo sfondo trasparente all'hover */
+    color: #cc99cc; /* Cambia il colore del testo al colore del bordo */
+}
+
+
+.scegli{
+    margin-left: 102px;
+    margin-top: 160px;
+    color: #FFFFFF;
+    display: block;
+    align-items: flex-start;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 32pt;
+  }
+
+
+.slider-wrapper {
+    width: 100%;
+    margin: 20px auto;
+    position: relative;
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: max-content;
+    padding-left: 80px;
+}
+
+.slider-item {
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-item .segno {
+    width: 200px;
+}
+
+.slider-prev, .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.2s ease;
+}
+.slider-prev:hover, .slider-next:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-prev svg, .slider-next svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+    transition: fill 0.2s ease;
+    border: none;
+}
+
+.slider-prev:hover svg {
+    fill: #ddd;
+}
+
+.slider-prev {
+    left: 32;
+    border: none;
+}
+
+.slider-next {
+    right: 32;
+    border: none;
+}
+
+/* SFUMATURA LATERALE (modificata) */
+.slider-wrapper::before,
+.slider-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 160px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.slider-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, rgb(0, 0, 0), transparent);
+}
+
+.slider-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, rgb(0, 0, 0), transparent);
+}
+
+.segno {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.segno:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.segnonascosto {
+    display: none;
+}
+
+
+footer {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuisce lo spazio tra le due sezioni principali */
+    align-items: flex-start; /* Allinea gli elementi all'inizio del contenitore */
+}
+
+.footer-left {
+    display: flex; /* Per disporre logo e email orizzontalmente */
+    flex-direction: column; /* Li dispone in colonna */
+    align-items: flex-start;
+}
+
+.footer-logo {
+    max-width: 100px;
+    margin-bottom: 10px; /* Spazio tra logo e email */
+}
+
+.footer-email {
+    color: #000000;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+.footer-email:hover {
+    color: #cc99cc;
+}
+.footer-right {
+    text-align: right; /* Allinea il testo a destra */
+    align-self: flex-end; /* Allinea la sezione in basso a destra */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left {
+        align-items: center; /* Centra logo e email su schermi piccoli */
+        margin-bottom: 20px;
+    }
+    .footer-right {
+        text-align: center; /* Centra il copyright su schermi piccoli */
+    }
+}

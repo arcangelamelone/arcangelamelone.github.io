@@ -1,0 +1,123 @@
+<html lang="it">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Chi siamo</title>
+    <link rel="stylesheet" href="aboutusstyle.css" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap">
+    <meta charset="utf-8">
+</head>
+<body>
+    <header>
+        <nav class="barra-menu">
+            <img src="Logo.png" alt="" width="120px">
+            <div class="menu">
+                <ul>
+                    <li><a href="../index.html" class="home">HOME</a></li>
+                    <li><a href="index.html" class="segnonav">SEGNO</a></li>
+                    <li class="menuoroscopo" id="oroscopo-menu">
+                        <a href="#" class="linkoroscopo">OROSCOPO</a>
+                        <div class="contenutimenuoroscopo">
+                            <a href="../oroscopo/intromese/index.html" class="mese">Del mese</a>
+                            <a href="../oroscopo/introanno/index.html" class="anno">Dell'anno</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus/index.html" class="chisiamo">CHI SIAMO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div class="intro">
+    <h1> ABOUT US</h1>
+    <p class="testointro"> Abbiamo creato DisAstro quando ci siamo rese conto che non esiste un sito web dedicato solo all’astrologia che risultasse interessante.
+        Siamo tre ragazze che si sono conosciute all’università, frequentiamo il corso di Design della Comunicazione a Napoli.
+        Molto diverse, la nostra unicità rende il team completo da tutti i punti di vista, e soprattutto siamo tanto legate.
+    <br>
+    Ci presentiamo...
+    </p>
+  </div>
+
+<div class="noi">
+  <div class="archino">
+    <img src="fileanimazioni1.gif" alt="" width="260px">
+
+<div class="testiarcangela">
+    <h2> ARCANGELA</h2>
+    <br>
+    <p>
+        Arcangela non ti ascolta. È lì ma è come se non ci fosse, la sua testa è sempre altrove: cibo, vestiti, il tizio che ha conosciuto ieri all’ultimo party… Ma no, che dico. Lei è una secchiona… a cui piace bere.
+        Potremo definirla la vera e propria designer del gruppo. Il suo gusto (e le sue abilità) sul design sono ineccepibili. Sicuramente è la più “seria” tra le tre, almeno per quanto riguarda le scadenze. Per il resto, potrai sempre contare su di lei per aiuti di ogni sorta. Dimenticavo, è un toro ascendente gemelli.
+    </p>
+    <br>
+    <p><mark> Alessia: “Se la inviti a casa ti porta 3000 pomodorini differenti”</mark></p>
+</div>
+</div>
+
+    <div class="ale">
+    <img src="fileanimazioni3.gif" alt="" width="260px">
+    <div class="testialessia">
+    <h2> ALESSIA</h2>
+    <br>
+    <p>
+        Alessia è il sole del gruppo, non solo perché è bionda, ma perché il suo sorriso illumina tutte le stanze. A volte è fastidioso in effetti, soprattutto quando vorresti dormire e la voce della prof già disturba, ci manca solo la luce.
+A parte gli scherzi, grande perfezionista, è grandiosa nel creare illustrazioni vettoriali e qualunque cosa sia rivolta ad un target per bambini. AH, è una vergine ascendente vergine. Immaginate.
+</p>
+<br>
+    <p><mark> Emilia: ”Toglietele quel telefono di mano”</mark></p>
+  </div>
+</div>
+
+    <div class="emi">
+    <img src="fileanimazioni2.gif" alt="" width="260px">
+        <div class="testiemilia">
+    <h2> EMILIA</h2>
+    <br>
+    <p>
+        Emilia è la nerd del gruppo. La riconoscete subito, è quella in fondo alla stanza che sembra non voler avere a che fare con nessuno. Poi le parli e scopri il che è l’opposto di quel che sembra. Amante dei videogiochi, manga, anime, film, libri… Ha una grande fantasia, e sicuramente è una sognatrice, come dimostrato dalle mille idee che sforna al secondo. Non si sa come si sia ritrovata in accademia, sa solo che le piace disegnare e inventare storie. Si, sono io che sto scrivendo.
+Vergine ascendente cancro, perfetto direi.
+</p>
+<br>
+    <p><mark> Arcangela: “Datele una spada e diventa Satana!”</mark></p>
+</div>
+</div>
+</div>
+
+
+
+        <br><br><br><br>
+        <div>
+          <img src="starry.jpg" alt="" width="100%">
+          </div>
+          <footer>
+              <div class="footer-container">
+                  <div class="footer-left">
+                      <img class="footer-logo" src="Logo_footer.png" alt="Logo">
+                      <a class="footer-email" href="mailto:arcangelamelone2000@gmail.com">arcangelamelone2000@gmail.com</a>
+                      </div>
+                  <div class="footer-right">
+                      &copy; 2025 Disastro. Tutti i diritti riservati.
+                  </div>
+              </div>
+          </footer>
+        
+              </body>
+            </html>
+
+
+            <script>
+              const oroscopoMenu = document.getElementById('oroscopo-menu');
+              const sottomenu = oroscopoMenu.querySelector('.contenutimenuoroscopo');
+          
+              oroscopoMenu.addEventListener('click', function(event) {
+                  event.preventDefault(); // Impedisce il comportamento predefinito del link (se presente)
+                  sottomenu.style.display = sottomenu.style.display === 'block' ? 'none' : 'block';
+              });
+          
+              sottomenu.addEventListener('click', function(event) {
+              if (event.target.classList.contains('mese') || event.target.classList.contains('anno')) {
+                  event.stopPropagation(); // ESSENZIALE: Impedisce la propagazione al contenitore
+                  // Ora il link funzionerà automaticamente perché non c'è più preventDefault qui per i link del sottomenu.
+              }
+          });
+          </script>
+
